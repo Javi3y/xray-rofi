@@ -1,0 +1,24 @@
+[project]
+name = "xray-rofi"
+version = "0.1.0"
+description = "Rofi 2.0 UI and Asyncio Daemon for Xray-core v26+"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+xray-rofi = "xray_rofi.ui.app:main"
+xray-rofid = "xray_rofi.daemon.server:main"
+xray-rofi-pkhelper = "xray_rofi.pkhelper:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.setuptools.packages.find]
+include = ["xray_rofi*"]
